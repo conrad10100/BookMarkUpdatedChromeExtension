@@ -5,7 +5,6 @@
   "manifest_version": 3,
 
   "permissions": ["storage", "tabs", "bookmarks"],
-  "host_permissions": ["https://*.youtube.com/*"],
 
   "icons": {
     "16": "assets/extension_icon_scaled_16x16.png",
