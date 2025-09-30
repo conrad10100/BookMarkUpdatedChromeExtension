@@ -3,7 +3,6 @@ export async function getActiveTabURL() {
         currentWindow: true,
         active: true
     });
-  
+
     return tabs[0];
 }
-
