@@ -2,18 +2,25 @@
   "name": "My Bookmark Updater",
   "version": "0.1.0",
   "description": "Updates existing bookmarks with new URLs if similar bookmarks exist.",
-  "permissions": ["storage", "tabs","bookmarks"],
+  "manifest_version": 3,
+
+  "permissions": ["storage", "tabs", "bookmarks"],
   "host_permissions": ["https://*.youtube.com/*"],
 
+  "icons": {
+    "16": "assets/extension_icon_scaled_16x16.png",
+    "32": "assets/extension_icon_scaled_32x32.png",
+    "48": "assets/extension_icon_scaled_48x48.png",
+    "128": "assets/extension_icon_scaled_128x128.png"
+  },
 
   "action": {
     "default_icon": {
-      "16": "assets/ext-icon.png",
-      "24": "assets/ext-icon.png",
-      "32": "assets/ext-icon.png"
+      "16": "assets/extension_icon_scaled_16x16.png",
+      "32": "assets/extension_icon_scaled_32x32.png",
+      "48": "assets/extension_icon_scaled_48x48.png"
     },
     "default_title": "My Bookmark Updater",
     "default_popup": "popup.html"
-  },
-  "manifest_version": 3
+  }
 }

@@ -22,18 +22,18 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
 
       if (similarBookmark) {
-        // Get the parentId before deleting
         chrome.bookmarks.get(similarBookmark.id, function (results) {
           const parentId = results[0].parentId;
-          // Remove the similar bookmark
+          // Use the existing bookmark's title
+          const updatedBookmarkData = {
+            url: bookmarkData.url,
+            title: similarBookmark.title,
+            parentId: parentId,
+          };
           chrome.bookmarks.remove(similarBookmark.id, function () {
-            // Create new bookmark in the same folder
-            chrome.bookmarks.create(
-              { ...bookmarkData, parentId },
-              function () {
-                createAndAlert(bookmarkData, similarBookmark);
-              }
-            );
+            chrome.bookmarks.create(updatedBookmarkData, function () {
+              createAndAlert(updatedBookmarkData, similarBookmark);
+            });
           });
         });
       } else {
