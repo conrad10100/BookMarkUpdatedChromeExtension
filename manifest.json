@@ -4,7 +4,7 @@
   "description": "Updates existing bookmarks with new URLs if similar bookmarks exist.",
   "manifest_version": 3,
 
-  "permissions": ["storage", "tabs", "bookmarks"],
+  "permissions": ["tabs", "bookmarks"],
 
   "icons": {
     "16": "assets/extension_icon_scaled_16x16.png",
@@ -21,5 +21,14 @@
     },
     "default_title": "My Bookmark Updater",
     "default_popup": "popup.html"
-  }
+    }
+    ,
+    "commands": {
+      "activate-extension": {
+        "suggested_key": {
+          "default": "Ctrl+B"
+        },
+        "description": "Activate the extension command"
+      }
+    }
 }
